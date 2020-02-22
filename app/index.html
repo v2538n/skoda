@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Только в ПРАГМАТИКА, KIA ниже себистоимости!</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { overflow-x: hidden; } html { background-color: #fff; }</style>
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/sets.js"></script>
+	<script src="js/scripts.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0GEfCfgBSjGSN9aXhV92yadQsUUgjVv0"></script>
+
+</head>
+
+<body>
+	<!-- Google Analytics START -->
+	<!-- Google Analytics END -->
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		if(sets.ya_metrika != 0){
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.window['yaCounter' + sets.ya_metrika] = new Ya.Metrika({
+							id: sets.ya_metrika,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true,
+							webvisor:true, 
+							triggerEvent:true
+						});
+					} catch(e) { }
+				});
+				var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+		}
+	</script>
+	<template id="ya-metrika"></template>
+	<!-- /Yandex.Metrika counter -->
+
+	<div id="app" v-cloak>
+		<div id="desktop" v-if="pageType === 'desktop'">
+			<!--Шапка сайта -->
+			<div id="header" class="animated fadeInDown">
+				<div class="top-header">
+					<div class="container">
+						<div class="left">
+							<div class="fifa-logo">
+								<img src="img/fifa-logo.png" class="img-responsive">
+							</div>
+							<div class="nav" data-wow-delay=".2s">
+								<nav>
+									<ul>
+										<li><a class="active" href="#main" v-on:click.prevent="scrollTo('main')">Главная</a></li>
+										<li><a href="#cars" v-on:click.prevent="scrollTo('cars')">Авто в наличии</a></li>
+										<li><a href="#credit" v-on:click.prevent="scrollTo('credit')">Кредит</a></li>									
+										<li><a href="#benefits" v-on:click.prevent="scrollTo('benefits')">Преимущества</a></li>
+										<li><a href="#contacts" v-on:click.prevent="scrollTo('contacts')">Контакты</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="address">
+							<p>г. Санкт-Петербург<br>Малая Балканская, д. 57</p>
+						</div>
+					</div>
+				</div>
+				<div class="bot-header">
+					<div class="container">
+						<div class="logo-kia">
+							<img src="img/kia-logo.svg" class="img-responsive" alt="KIA">
+						</div>
+						<div class="right">
+							<div class="contact-block">
+								<img src="img/icons/smartphone.svg">
+								<div class="myphone">
+									<my-phone></my-phone>
+									<br>
+									<p>Ежедневно с {{data.time_work_from}}:00 до {{data.time_work_to}}:00</p>
+								</div>									
+							</div>
+							<div class="logo-forsage">
+								<img src="img/logo-forsage.png" class="img-responsive" alt="Форсаж">
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/Шапка сайта -->
+			<!--Фиксированное меню -->
+			<div id="scrollfix">
+				<div class="container">
+<!-- 					<div class="logo-fifa">
+						<img src="img/kia.png">
+					</div> -->
+					<div class="kia-logo">
+						<img src="img/kia-logo.svg" alt="KIA">
+					</div>
+					<div class="nav" data-wow-delay=".2s">
+						<nav>
+							<ul>
+								<li><a class="active" href="#main" v-on:click.prevent="scrollTo('main')">Главная</a></li>
+								<li><a href="#cars" v-on:click.prevent="scrollTo('cars')">Авто в наличии</a></li>
+								<li><a href="#credit" v-on:click.prevent="scrollTo('credit')">Кредит</a></li>									
+								<li><a href="#benefits" v-on:click.prevent="scrollTo('benefits')">Преимущества</a></li>
+								<li><a href="#contacts" v-on:click.prevent="scrollTo('contacts')">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="right">
+						<div class="contact-block">
+							<img src="img/icons/smartphone.svg">
+							<div class="myphone">
+								<my-phone></my-phone>
+								<br>
+								<p>Ежедневно с {{data.time_work_from}}:00 до {{data.time_work_to}}:00</p>
+							</div>										
+						</div>
+						<div class="logo-forsage">
+							<img src="img/logo-forsage.png" class="img-responsive" alt="Форсаж">
+						</div>
+						<div class="burger" v-on:click="toggleMenu">
+							<div class="x"></div>
+							<div class="y"></div>
+							<div class="z"></div>											
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/Фиксированное меню -->
+			<!-- Блок с заголовком -->
+			<div id="main" class="wow fadeIn">
+				<div class="slider_main">
+					<div class="slide" id="all-auto">
+						<div class="container">
+							<h1>Только в {{month}} <span class="accent">KIA</span> ниже себестоимости, от <span class="accent">{{localeNumber(minPrice)}}</span> руб.</h1>
+							<p>Новый <span class="accent">KIA</span> с выгодой до <span class="accent">{{localeNumber(maxBenefit)}}</span> руб. <br>ТО + 1 год без переплаты по кредиту в подарок!</p>
+						</div>
+					</div>
+					<div class="slide" v-for="(car, index) in data.cars" :id="car.id" :style="{'background-image': 'url(img/main-slider/' + car.id + '.jpg)'}">
+						<div class="container">
+							<h1>Только в {{month}} <span class="accent">KIA {{car.id}}</span> ниже себестоимости, от <span class="accent">{{localeNumber(minimum(car.models, 'price'))}}</span> руб.</h1>
+							<p>Новый <span class="accent">KIA {{car.id}}</span> с выгодой до <span class="accent">{{localeNumber(maximum(car.models, 'benefit'))}}</span> руб. <br>ТО + 1 год без переплаты по кредиту в подарок!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Блок с заголовком -->
+			<!-- Блок с карточками авто -->
+			<div id="cars">
+				<div class="container">					
+					<h2 class="wow fadeIn">Выберите Ваш KIA <span>и получите специальные условия при покупке</span></h2>
+					<div class="tabs wow fadeIn" data-wow-duration="2s">
+						<div class="car_tab" v-for="(car, index) in data.cars" @click="changeModel(car.id, index)" :id="car.filter" :data-model="car.id">
+							<div class="wrapper_info">
+								<div class="carImage">
+									<img :src="'img/cars/' + car.id + '.png'" :alt="car.id" class="img-responsive">
+								</div>
+								<img :src="'img/models/' + car.id + '.png'" :alt="car.id" class="img-responsive nameCar">
+								<p class="price">от&nbsp;<span class="red">{{localeNumber(minimum(car.models, 'price'))}}</span>&nbsp;руб.</p>
+								<p class="benefit">Выгода до&nbsp;<span class="red">{{localeNumber(maximum(car.models, 'benefit'))}}</span>&nbsp;руб.</p>
+								<p class="credit">за&nbsp;<span class="red">{{localeNumber(minimum(car.models, 'credit'))}}</span>&nbsp;руб. в&nbsp;месяц</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab_content">
+						<div class="card  wow fadeIn" data-wow-duration="2s" v-for="(card, key) in data.cars[carPicked].models">
+							<div class="image_block">
+								<div class="gift" v-show="card.gift == 'on'">
+									<img src="img/icons/gift.svg"><p><span>В подарок</span> сигнализация</p>
+								</div>	
+								<img :src="'img/cars/colors/' + carPickedName + '/' + card.colors[0] + card.gt +'.jpg'" class="imageCar">
+							</div>
+							<div class="descriptions">
+								<p class="name">{{card.name}} {{card.compl}}</p>
+								<p class="power flex"><span>Двигатель:</span> <span class="no-wrap">{{card.power}}</span></p>
+								<p class="transmission flex"><span>Трансмиссия</span> <span class="no-wrap">{{card.transmission}} {{card.privod}}</span></p>
+								<p class="colorName flex"><span>Цвет:</span> <span class="no-wrap">{{colorName(card.colors[0])}}</span></p>
+								<div class="colors flex">
+									<div class="color" v-for="(color, index) in card.colors" :style="{'background-color': colorCode(card.colors[index])}" @mouseover="changeColor(card.name, key,  colorName(color), color, index, carPicked)"></div>
+								</div>
+							</div>
+							<div class="info">
+								<div class="prices">
+									<p class="price">от&nbsp;<span class="red">{{localeNumber(card.price)}}</span>&nbsp;руб.</p>
+									<p class="credit">за&nbsp;<span class="red">{{localeNumber(card.credit)}}</span>&nbsp;руб. в&nbsp;месяц</p>
+									<p class="benefit">Выгода до&nbsp;<span class="red">{{localeNumber(card.benefit)}}</span>&nbsp;руб.</p>
+								</div>
+								<a href="#" v-on:click.prevent="openPopup()" class="btn">Узнать подробнее</a>										
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Блок с карточками авто -->
+			<div id="buy_auto" class="wow fadeIn">
+				<div class="container">
+					<p class="intro">Быстро подобрать Ваш KIA и оптимальную комплектацию можно
+						по телефону <my-phone></my-phone> или заказав обратный звонок</p>
+						<form method="POST" name="super" action="#" v-on:submit.prevent="sendForm()">								
+							<div class="form-elements">
+								<div class="input-block">
+									<select name="select-car" id="select-car" class="input">
+										<option value="">Выбрать модель</option>
+										<option v-for="opt in data.cars" :value="opt.id">
+											KIA {{opt.id}}
+										</option>
+									</select>
+								</div>
+								<div class="input-block">
+									<p class="placholder_text">Контактный телефон:</p>
+									<input type="tel" :class="[placeholderPhone === 'Укажите Ваш телефон' ? 'redput' : '', 'input']" name="phone" v-model="inputtedPhone" v-input-mask data-inputmask="'mask': '+7 (999) 999-99-99'" :placeholder="placeholderPhone">
+									<div class="circle-loader">
+										<div class="checkmark draw"></div>
+									</div>
+								</div>
+								<div class="submit">
+									<button type="submit" v-bind:class="[(phoneSended == 'sending') ? 'sending' : '', 'btn']">
+										<span class="text">Оставить заявку</span>
+										<span class="progress"></span>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- Блок c кредитом -->
+				<div id="credit" class="wow fadeIn">
+					<div class="container">
+						<div class="wrapper">
+							<div class="intro">
+								<h3>Выгодные программы кредитования</h3>
+								<p>Узнайте больше о кредитных предложениях в нашем дилерском центре по телефону <my-phone></my-phone> или закажите звонок.</p>
+								<a href="#" v-on:click.prevent="openPopup()" class="btn">Узнать условия</a>	
+							</div>
+							<div class="slider_credit">
+								<div class="car-credit" v-for="car in data.cars">
+									<img :src="'img/credit/' + car.id + '.png'" class="img-responsive">
+									<div class="info">
+										<p class="name">KIA {{car.id}}</p>
+										<p class="credit">от {{localeNumber(minimum(car.models, 'credit'))}} руб. в месяц</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Блок c кредитом -->
+				<!-- Блок c выгодами -->
+				<div id="benefits">
+					<div class="container wow fadeIn" data-wow-duration="2s">
+						<h2>Преимущества <span>покупки KIA в нашем дилерском центре</span></h2>
+						<div class="wrapper">
+							<div class="item">
+								<div class="image">
+									<img src="img/icons/discount.svg" class="img-responsive">
+								</div>
+								<p>Гарантия<span>лучшей цены</span></p>
+							</div>
+							<div class="item">
+								<div class="image">
+									<img src="img/icons/contract.svg" class="img-responsive">
+								</div>
+								<p>Быстрое<span>оформление документов</span></p>
+							</div>
+							<div class="item">
+								<div class="image">
+									<img src="img/icons/car.svg" class="img-responsive">
+								</div>
+								<p>Trade-in <span>обмен Вашего авто</span></p>
+							</div>
+							<div class="item">
+								<div class="image">
+									<img src="img/icons/price.svg" class="img-responsive">
+								</div>
+								<p>Особые<span>условия покупки</span></p>
+							</div>
+							<div class="item">
+								<div class="image">
+									<img src="img/icons/diploma.svg" class="img-responsive">
+								</div>
+								<p>Автомобили<span>в наличии с ПТС</span></p>
+							</div>
+							<div class="item">
+								<div class="image">
+									<img src="img/icons/settings.svg" class="img-responsive">
+								</div>
+								<p>KIA <span>сертифицированный сервис</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Блок c выгодами -->
+				<!-- Блок контакты -->
+				<div id="contacts">
+					<div id="map"></div>	
+					<div class="mapdes">
+						<div class="logos">
+							<div class="logo-kia">
+								<img src="img/footer_logo.png">
+							</div>
+						</div>
+						<div class="diler">
+							<p class="name">Прагматика</p>
+							<p class="official">Официальный дилер KIA</p>
+						</div>
+						<div class="address">
+							<p>г. Санкт-Петербург <br>
+							Малая Балканская, д. 57</p>
+						</div>	
+						<div class="contact-block">					
+							<p>Ежедневно с {{data.time_work_from}}:00 до {{data.time_work_to}}:00</p>		
+							<div class="myphone">														
+								<my-phone></my-phone>						
+							</div>									
+						</div>
+
+						<a href="#" v-on:click.prevent="openPopup()" class="btn">Узнать подробнее</a>																			
+					</div>
+				</div> 
+				<!-- /Блок контакты -->
+				<!-- Подвал -->
+				<div class="footer">
+					<div class="bglight">
+						<div class="container">
+							<div class="tandem">
+								<p>Разработка сайта —</p>
+								<img src="img/Tandem_Adv_Gr.svg" class="img-responsive">
+							</div>
+							<p class="accept">
+								Все сведения, содержащиеся на настоящем Сайте, носят исключительно информационный характер. Информация, представленная
+								на Сайте, не является исчерпывающей. Для получения более полной и подробной информации Вы можете обратиться к менеджерам. 
+							</p>
+						</div>
+					</div>
+					<div class="container">
+						<div class="flex">
+							<p>© 2005-{{year}} Автоцентр Прагматика Купчино</p>
+							<p class="slideToggle">Полные условия акции</p>
+							<div class="kia-logo">
+								<img src="img/footer_logo.png">
+							</div>
+						</div>
+						<div class="toggleBlock">
+							<p>
+								Все сведения, содержащиеся на настоящем Сайте, носят исключительно информационный характер. Информация, представленная на Сайте, не является исчерпывающей. Для получения более полной и подробной информации Вы можете обратиться к менеджерам. Информация о ценах не является публичной офертой. Указанные на Сайте цены, комплектации, технические характеристики и иная информация о Товарах может быть изменена в любое время без предварительного уведомления пользователей. Обращаем Ваше внимание на то, что все объявления о моделях автомобилей, размещенные на настоящем интернет-сайте, носят исключительно информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации. Для получения точной информации о наличии моделей с требуемой комплектацией, техническими характеристиками и цветовыми сочетаниями, а также точной стоимости автомобилей, пожалуйста, обращайтесь к менеджерам
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- /Подвал -->
+
+				<!-- <p><a href="#" v-on:click.prevent="openPopup('agreement')">Popup</a></p> -->
+			</div>
+			<div id="mobile" v-if="pageType === 'mobile'">			
+				<!--Шапка сайта -->
+				<div id="header" class="animated fadeInDown">
+					<div class="container">
+						<div class="logo-fifa">
+							<img src="img/kia-logo.svg" class="img-responsive">
+						</div>					
+						<div class="right">
+							<div class="contact-block">
+								<img src="img/icons/smartphone.svg">
+								<div class="myphone">
+									<my-phone></my-phone>
+									<br>
+									<p>Ежедневно с {{data.time_work_from}}:00 до {{data.time_work_to}}:00</p>
+								</div>										
+							</div>
+							<div class="logo-forsage">
+								<img src="img/logo-forsage.png" class="img-responsive" alt="Форсаж">
+							</div>
+							<div class="burger" v-on:click="toggleMenu">
+								<div class="x"></div>
+								<div class="y"></div>
+								<div class="z"></div>											
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/Шапка сайта -->
+				<div class="nav" data-wow-delay=".2s">
+					<nav>
+						<ul>
+							<li><a href="#" v-on:click.prevent="slideTo(all)">Главная</a></li>
+							<li v-for="link in data.cars"><a href="#" v-on:click.prevent="slideTo(link.id)">KIA {{link.id}}</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div id="main">
+					<div id="slider">
+						<div class="slide" id="all">
+							<div class="title">
+								<h1>Только в {{month}} <span class="red">KIA</span> ниже<br>
+								себестоимости, от&nbsp;<span class="red">{{localeNumber(minPrice)}}</span>&nbsp;руб.</h1>
+								<p>Новый <span class="red">KIA</span> с выгодой до <span class="red">{{localeNumber(maxBenefit)}}</span> руб. <br>
+								ТО + 1 год без переплаты по кредиту в подарок!</p>
+							</div>
+													<div class="info">
+							<p>Новый <span class="red">KIA</span></p>
+							<p>от&nbsp;<span class="red">{{localeNumber(minPrice)}}</span>&nbsp;руб.</p>
+						</div>
+						</div>
+						<div class="slide" v-for="(car, index) in data.cars" :id="car.id" :style="{'background-image': 'url(img/m/' + car.id + '.jpg)'}">
+							<div class="title">
+								<h2>Только в {{month}} <span class="red">KIA {{car.name}}</span> ниже<br>
+									себестоимости, от&nbsp;<span class="red">{{localeNumber(minimum(car.models, 'price'))}}</span>&nbsp;руб.</h2>
+								<p>Новый <span class="red">KIA {{car.name}}</span> с выгодой до <span class="red">{{localeNumber(maximum(car.models, 'benefit'))}}</span> руб. <br>
+								ТО + 1 год без переплаты по кредиту в подарок!</p>
+							</div>
+																				<div class="info">
+							<p>Новый <span class="red">KIA {{car.name}}</span></p>
+							<p>от&nbsp;<span class="red">{{localeNumber(minimum(car.models, 'price'))}}</span>&nbsp;руб.</p>
+							<p>за&nbsp;<span class="red">{{localeNumber(minimum(car.models, 'credit'))}}</span>&nbsp;руб. в день.</p>
+						</div>
+						</div>
+					</div>
+					<div class="form_wrapper">
+						<form method="POST" name="super" action="#" v-on:submit.prevent="sendForm()" class="xs-hidden">						
+							<div class="form-elements">
+								<div class="input-block">
+									<p class="placholder_text">Номер телефона:</p>
+									<input type="tel" :class="[placeholderPhone === 'Укажите Ваш телефон' ? 'redput' : '', 'input']" name="phone" v-model="inputtedPhone" v-input-mask data-inputmask="'mask': '+7 (999) 999-99-99'" :placeholder="placeholderPhone">
+									<div class="circle-loader">
+										<div class="checkmark draw"></div>
+									</div>
+								</div>
+								<div class="submit">
+									<button type="submit" v-bind:class="[(phoneSended == 'sending') ? 'sending' : '', 'btn']">
+										<span class="text">Оставить заявку</span>
+										<span class="progress"></span>
+									</button>
+								</div>									
+							</div>
+						</form>
+						<a href="#" v-on:click.prevent="openPopup()" class="btn xs-visible">Оставить заявку</a>	
+					</div>
+				</div>
+
+
+				<!-- Подвал -->
+				<div class="footer">
+					<div class="bglight">
+						<div class="container">
+							<div class="tandem">
+								<p>Разработка сайта —</p>
+								<img src="img/Tandem_Adv_Gr.svg" class="img-responsive">
+							</div>
+							<p class="accept">
+								Все сведения, содержащиеся на настоящем Сайте, носят исключительно информационный характер.Информация, представленная на Сайте, не является исчерпывающей. Для получения более полной и подробной информации Вы можете обратиться к менеджерам. 
+							</p>
+						</div>
+					</div>
+					<div class="container">
+						<div class="flex">
+							<p>© Автоцентр «Форсаж»</p>
+							<p class="slideToggle">Полные условия акции</p>
+							<div class="kia-logo">
+								<img src="img/footer_logo.png">
+							</div>
+						</div>
+						<div class="toggleBlock">
+							<p>
+								Все сведения, содержащиеся на настоящем Сайте, носят исключительно информационный характер. Информация, представленная на Сайте, не является исчерпывающей. Для получения более полной и подробной информации Вы можете обратиться к менеджерам. Информация о ценах не является публичной офертой. Указанные на Сайте цены, комплектации, технические характеристики и иная информация о Товарах может быть изменена в любое время без предварительного уведомления пользователей. Обращаем Ваше внимание на то, что все объявления о моделях автомобилей, размещенные на настоящем интернет-сайте, носят исключительно информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации. Для получения точной информации о наличии моделей с требуемой комплектацией, техническими характеристиками и цветовыми сочетаниями, а также точной стоимости автомобилей, пожалуйста, обращайтесь к менеджерам
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- /Подвал -->
+			</div>
+			<!-- POPUPS START -->
+			<div id="popup" :class="popupIsOpen ? 'open' : ''">
+				<div class="body">
+					<div class="close" title="Закрыть" v-on:click="closePopup"></div>
+					<template v-if="!popupAgreement">
+						<div class="content">
+							<template v-if="(phoneSended == 'not') || (phoneSended == 'sending')">					
+								<form method="POST" name="super" action="#" v-on:submit.prevent="sendForm()">
+									<p>Оставьте заявку<span>и получите специальные условия при покупке KIA</span></p>									
+									<div class="form-elements">
+										<div class="input-block">
+											<p class="placholder_text">Ваше имя:</p>
+											<input type="text" class="input" name="name" v-model="inputtedName" :placeholder="placeholderName" required/>
+										</div>
+										<div class="input-block">
+											<p class="placholder_text">Контактный телефон:</p>
+											<input type="tel" :class="[placeholderPhone === 'Укажите Ваш телефон' ? 'redput' : '', 'input']" name="phone" v-model="inputtedPhone" v-input-mask data-inputmask="'mask': '+7 (999) 999-99-99'" :placeholder="placeholderPhone">
+											<div class="circle-loader">
+												<div class="checkmark draw"></div>
+											</div>
+										</div>
+								<!-- 	<div class="input-block">
+										<p class="placholder_text">E-mail:</p>
+										<input type="email" class="input" name="email" v-model="inputtedEmail" :placeholder="placeholderEmail" required/>
+									</div> -->
+									<!-- <p class="politic"><a href="#" v-on:click.prevent="openPopup('agreement')">Согласие на обработку персональных данных</a></p> -->
+									<div class="submit">
+										<button type="submit" v-bind:class="[(phoneSended == 'sending') ? 'sending' : '', 'btn']">
+											<span class="text">Оставить заявку</span>
+											<span class="progress"></span>
+										</button>
+									</div>
+									<p class="politic"><a href="#" v-on:click.prevent="openPopup('agreement')">Оставляя заявку, Вы соглашаетесь с правилами обработки персональных данных</a></p>							
+								</div>
+							</form>
+						</template>
+						<template v-if="phoneSended == 'sended'">
+							<div class="content tnxpopup">
+								<p class="bold">Спасибо за Вашу заявку!</p>
+								<p v-if="workingHours">Сейчас совершается бесплатный звонок из отдела продаж.<br>Для получения информации уточните менеджеру интересующий Вас вопрос.</p>
+								<p v-else>Отдел продаж уже закончил работу.<br>Вам придёт бесплатный звонок из отдела продаж. Точное время звонка придёт Вам по SMS. Для получения информации, пожалуйста, уточните менеджеру интересующий Вас вопрос.</p>
+								<div class="btngreen success" v-on:click="closePopup">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.54 29.88"><path d="M31.81,0L13,18.55l-7.3-7.2L0,17,13,29.89,37.55,5.69Z" transform="translate(0 -0.01)"/></svg>
+								</div>
+							</div>
+						</template>
+					</div>
+				</template>
+				<template v-else>
+					<div class="content politicpopup">
+						<p class="bold">СОГЛАСИЕ<br>на обработку персональных данных и получение рекламы<br>(далее – «Согласие»)</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, quidem? Sed culpa architecto, temporibus dolor, quae repellendus sunt nobis quis ad numquam laborum labore laudantium eveniet? Nesciunt maxime nam nobis quis perferendis, saepe eligendi distinctio modi ea nihil neque enim beatae non obcaecati ut repellendus earum perspiciatis aliquid illum deleniti, voluptatum nulla aspernatur. Quidem sequi impedit maxime quam saepe officiis cupiditate unde itaque excepturi voluptatum eum doloremque magni aliquam, quas, fugit quisquam laborum voluptates aperiam? Ipsam, facere molestias voluptatibus, hic ratione numquam accusantium voluptatem? Corrupti deserunt sequi, ratione minus molestiae illum ab dolor porro architecto blanditiis ducimus. Laudantium, possimus, sed.						
+						</p>
+					</div>
+				</template>
+			</div>
+		</div>
+		<!-- POPUPS END -->
+	</div>
+
+	<!-- CallTouch START -->
+	<!-- CallTouch END -->
+
+	<!-- CallKeeper START -->
+	<!-- PUT YOUR CODE HERE -->
+	<!-- CallKeeper END -->
+
+	<!-- CallBackHunter START -->
+	<!-- CallBackHunter END -->
+
+	<script src="js/common.js"></script>
+
+</body>
+</html>

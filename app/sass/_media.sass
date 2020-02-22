@@ -1,0 +1,438 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+// @media only screen and (max-width : 1300px)
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1400px)
+	/**/
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 1200px)
+	/**/	
+	.ios
+		overflow-scrolling: touch !important
+		overflow: auto !important
+		height: 100% !important
+	#desktop #header
+		display: none
+	#desktop #scrollfix
+		z-index: 20
+		opacity: 1
+	#desktop #scrollfix .container .kia-logo
+		display: none
+	#desktop #scrollfix .container .logo-fifa
+		display: block
+	#desktop #scrollfix .container .nav
+		position: absolute
+		left: 0
+		top: 67px
+		background-color: #fff
+		width: 100%
+		height: calc(100vh - 67px)
+		transform: translateX(100vw)
+		transition: .4s ease-in-out
+		&.open
+			transform: translateX(0vw)
+	.burger
+		display: block!important		
+	#desktop #scrollfix .container .nav nav ul
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		li
+			margin: 15px 0px
+			a
+				font-size: 21px
+	#desktop #scrollfix .container .right .logo-forsage
+		margin-right: 30px
+		width: 154px
+		img			
+			height: 25px
+
+	#desktop #scrollfix .container .right
+		width: 100%
+		justify-content: flex-end
+	#desktop #scrollfix .container .right .contact-block
+		margin-right: 30px
+	#desktop #main
+		margin-top: 67px
+		height: 535px
+	#desktop #main .slider_main .flickity-prev-next-button.next
+		right: 15px
+	#desktop #main .slider_main .flickity-prev-next-button.previous
+		left: 15px
+	#desktop #cars .tabs .flickity-prev-next-button.next
+		right: 280px
+	#desktop #cars .tabs .flickity-prev-next-button.previous
+		left: 280px
+	#desktop #main .container h1
+		font-size: 30px
+		max-width: 600px
+	#desktop #main .container > p
+		font-size: 18px
+	#desktop #cars .tabs
+		margin-top: 30px
+	.container h2
+		font-size: 30px
+		span
+			font-size: 15px
+	#desktop #cars .block_filter ul.filters li
+		padding: 12px 22px
+		font-size: 13px
+		margin-right: 19px
+	#desktop #cars .tab_content .card
+		flex-wrap: wrap
+	#desktop #cars .tab_content .card .info
+		width: 100%
+		margin-top: 35px
+		display: flex
+		align-items: center
+		justify-content: center
+		.prices
+			text-align: right
+			margin-right: 30px
+	#desktop #cars .tab_content .card .info a
+		margin: 0
+	#desktop .footer .bglight .container p.accept
+		max-width: 550px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 996px)
+	/**/
+	.flickity-prev-next-button
+		background: transparent!important
+		opacity: 1 !important
+	.flickity-prev-next-button .arrow
+		fill: $accent
+	#desktop .footer .bglight .container p.accept
+		max-width: 500px		
+	#desktop #main .container .soccer-boy img
+		width: 375px
+		height: 454px
+	#desktop #main .container .soccer-boy
+		right: -30px
+		bottom: -36px	
+	#desktop #cars .tabs .flickity-prev-next-button.next
+		right: 170px
+	#desktop #cars .tabs .flickity-prev-next-button.previous
+		left: 170px
+	#desktop #cars .block_filter
+		display: none
+	#desktop #cars .tab_content .card
+		padding: 20px 50px
+	#desktop #cars .tab_content .card .descriptions
+		margin-right: 0
+	#desktop #cars .tab_content .card .descriptions
+		max-width: 320px
+	#desktop #benefits .container .wrapper .item p
+		font-size: 14px
+		margin-top: 20px
+		span
+			font-size: 11px
+	#desktop #benefits .container .wrapper .item .image
+		max-width: 61px
+		max-height: 58px
+	#desktop #benefits .container .wrapper
+		margin-top: 55px
+	#desktop .footer .bglight .container p.accept,
+	#mobile .footer .bglight .container p.accept
+		max-width: 380px
+		margin-left: 30px
+	#mobile .footer .bglight .container p.accept
+		font-size: 11px
+		line-height: 1.2em
+	#mobile #main #slider .slide
+		height: 812px
+	#desktop #buy_auto .form-elements
+		flex-direction: column
+		margin-top: 20px
+	#desktop #buy_auto .form-elements .input-block
+		margin-right: 0
+	#desktop #credit .wrapper .intro h3
+		font-size: 24px
+		letter-spacing: 0.48px
+	#desktop #credit .wrapper .intro
+		width: 50%
+	#desktop #credit .wrapper .slider_credit
+		width: calc(50% - 40px)
+	#mobile #main #slider .slide
+		flex-direction: column
+		justify-content: flex-start
+	#mobile #main #slider .slide .title
+		width: 80%
+	#mobile #main #slider .slide .info
+		padding-left: 23px
+		p
+			display: inline
+			&:first-child
+				display: block
+	#mobile #main .form_wrapper
+		right: auto
+		left: 23px
+		top: 320px
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 760px)
+	/**/
+
+	#desktop #scrollfix .container .kia-logo
+		display: block
+		img
+			width: 63px
+			height: 32px		
+	#desktop #scrollfix .container .right .contact-block,
+	#mobile #header .container .right .contact-block
+		display: none
+	#desktop #scrollfix .container .logo-fifa img,
+	#mobile #header .container .logo-fifa img
+		width: 105px
+		height: 36px
+	#desktop #scrollfix .container .right .logo-forsage
+		width: 129px
+		img
+			height: 21px
+	#desktop #main .container .soccer-boy
+		display: none
+	#desktop #main
+		height: 459px
+	#desktop #main .container
+		padding-top: 30px
+	#desktop #main .container h1
+		font-size: 19px
+	#desktop #main .container > p
+		font-size: 13px
+		margin-top: 20px
+		max-width: 100%
+	#desktop #main .container > p:after
+		width: 132px
+		height: 4px
+		top: -10px
+	#desktop #cars .tabs
+		margin-top: 0
+	#desktop #cars .tabs .flickity-prev-next-button.previous
+		left: -20px
+	#desktop #cars .tabs .flickity-prev-next-button.next
+		right: -20px
+	#desktop #main .slider_main .flickity-prev-next-button.next
+		right: 0
+	#desktop #main .slider_main .flickity-prev-next-button.previous
+		left: 0
+	#desktop #main
+		background-size: cover
+		background-position: 35% center
+	.container h2
+		font-size: 24px
+		span
+			font-size: 15px
+			max-width: 80%
+			margin: 0 auto
+	#desktop #cars .tabs .car_tab
+		max-width: 100%
+		width: 100%
+	#desktop #cars .tab_content .card
+		padding: 15px
+		padding-top: 30px
+	#desktop #cars .tab_content .card .descriptions
+		margin: 0
+	#desktop #cars .tab_content .card .descriptions p.power, #desktop #cars .tab_content .card .descriptions p.transmission, #desktop #cars .tab_content .card .descriptions p.colorName
+		font-size: 13px
+	#desktop #cars .tab_content .card .descriptions .colors .color
+		width: 19px
+		height: 19px		
+	#desktop #cars .tab_content .card .info
+		display: block
+	#desktop #cars .tab_content .card .info .prices
+		margin: 0
+		text-align: center
+		margin-bottom: 40px
+	.btn
+		padding: 15px 56px	
+		font-size: 15px
+	#desktop #credit .container p
+		font-size: 13px
+	#desktop #credit .container h2
+		font-size: 22px
+		max-width: 100%
+		width: 100%
+		line-height: 1.2em
+	#desktop #credit .container p:after
+		width: 128px
+		height: 4px
+	#desktop #credit
+		padding-bottom: 228px
+	#desktop #benefits .container .wrapper
+		flex-wrap: wrap
+		.item
+			width: 50%
+			margin-bottom: 60px
+	#desktop #benefits
+		margin-bottom: 0
+	#desktop #benefits .container .wrapper .item p
+		font-size: 14px
+		span
+			font-size: 11px
+	#desktop #buy_auto
+		margin: 20px 0
+	#desktop #contacts .mapdes
+		top: 23px
+		max-width: 100%
+		width: 100%
+		padding: 30px 15px
+	#desktop #buy_auto p.intro
+		font-size: 15px
+	#desktop #contacts .mapdes .address
+		font-size: 15px
+	#desktop .footer .bglight .container p.accept,
+	#mobile .footer .bglight .container p.accept
+		display: none
+	#desktop .footer .container .flex .kia-logo,
+	#mobile .footer .container .flex .kia-logo
+		position: absolute
+		right: 0px
+		padding-top: 5px
+		img
+			width: 51px
+			height: 34px
+			margin-left: auto		
+			display: block
+			margin-right: 34px
+	#desktop .footer .container .flex .kia-logo:after,
+	#mobile .footer .container .flex .kia-logo:after
+		width: 101px
+		background-repeat: no-repeat
+		
+	#desktop .footer .container .flex p,
+	#desktop .footer .container .flex a,
+	#mobile .footer .container .flex p,
+	#mobile .footer .container .flex a
+		font-size: 11px
+	#desktop .footer .container .flex,
+	#mobile .footer .container .flex
+		padding-top: 39px
+		padding-bottom: 17px
+		position: relative
+	#popup .body .content form > p
+		font-size: 24px
+	#popup .body .content form
+		padding-top: 50px
+	.input
+		height: 44px
+		margin-top: 30px
+	#popup .body .content .form-elements
+		width: 80%
+		margin: 0 auto
+		.btn
+			width: 100%
+			padding: 15px
+		.input
+			width: 100%
+	.input-block p.placholder_text
+		bottom: 15px	
+	.input-block.active p.placholder_text		
+		transform: translateX(-20px) translateY(-35px)
+	#popup .body .content form > p span
+		padding-top: 0
+		font-size: 11px
+		width: 90%
+		margin: 0 auto
+	.circle-loader
+		bottom: 12px
+	#popup .body .content .form-elements p.politic
+		margin-top: 5px
+		font-size: 11px	
+	#mobile #main #slider .slide	
+		height: 396px
+	#mobile #main #slider .slide h1, #mobile #main #slider .slide h2
+		font-size: 25px
+		line-height: 1.2em
+		span
+	#mobile #main #slider .slide p
+		font-size: 17px
+	#mobile #main #slider .slide .title
+		margin-top: 20px
+		margin-left: 15px
+	.xs-hidden
+		display: none
+	.xs-visible		
+		display: inline-block
+	#mobile #main .form_wrapper
+		text-align: center
+		z-index: 1
+		top: 260px
+	#popup .body .close
+		top: 10px
+		right: 10px
+	#popup .body
+		padding: 5px
+	#mobile #main #slider .flickity-prev-next-button
+		top: 70%
+		&.next
+			right: 0
+		&.previous
+			left: 0
+	#desktop #credit .wrapper
+		flex-direction: column
+		.intro
+			width: 100%
+		.slider_credit
+			width: 100%
+			margin-top: 20px
+	#desktop #credit .wrapper .slider_credit
+		height: 250px
+	#desktop #credit
+		padding-bottom: 40px
+	#desktop #credit .wrapper .slider_credit .car-credit .name
+		font-size: 18px
+	#desktop #credit .wrapper .slider_credit .car-credit p.credit
+		font-size: 12px
+	#desktop #credit .wrapper .slider_credit .car-credit .info
+		margin-top: 10px
+	#desktop #contacts .mapdes
+		top: 80px
+	#mobile #main #slider .slide h1, #mobile #main #slider .slide h2
+		font-size: 17px
+		margin-bottom: 20px
+	#mobile #main #slider .slide h1:after, #mobile #main #slider .slide h2:after
+		bottom: -10px
+		height: 2px
+	#mobile #main #slider .slide .title
+		width: 90%
+	#mobile #main #slider .slide p
+		font-size: 13px
+		line-height: 1.2em
+	#mobile #main #slider .slide .info
+		margin-top: 10px	
+		padding-left: 15px
+		p
+			font-size: 14px
+	#mobile #main .form_wrapper
+		top: 250px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 480px)
+	/**/
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
